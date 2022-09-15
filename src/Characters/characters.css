@@ -1,0 +1,32 @@
+.characterImg {
+  max-width: 90%;
+  max-height: 50%;
+}
+
+.allCharacterCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.characterCard {
+  block-size: fit-content;
+  text-align: center;
+  border: 10px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
+  cursor: pointer;
+}
+.paginate {
+  list-style: none;
+  display: flex;
+  margin-left: 40%;
+  position: absolute;
+  bottom: 10px;
+  gap: 20px;
+  cursor: pointer;
+}

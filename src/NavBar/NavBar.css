@@ -1,0 +1,54 @@
+header {
+  width: 100%;
+  display: flexbox;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-bottom: 1px solid #ccc;
+  background: #6a0c0b;
+  background: #fbca03;
+}
+
+header a,
+header button {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.314);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #6a0c0b;
+}
+
+.siteTitle {
+  font-size: 35px;
+  text-align: center;
+  color: #6a0c0b;
+}
+
+.searchBar {
+  border-radius: 10px;
+  width: 25%;
+  height: 25px;
+}
+
+.searchBarBtn {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: #6a0c0b;
+  border-radius: 8px;
+  margin: 1px;
+  padding: 4.5px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: #fff;
+}
+
+.suggestion {
+  cursor: pointer;
+}
+.suggestion:hover {
+  background-color: gray;
+}
