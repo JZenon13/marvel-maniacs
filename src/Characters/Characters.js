@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CharacterCard from "./CharacterCard";
 import "./characters.css";
 import ReactPaginate from "react-paginate";
-import { getCharacters } from "../api/heros";
-const APIURL = process.env.REACT_APP_API_URL;
+import { getAllCharacters } from "../api/heros";
 
 function Characters({
   marvelCharacters,
@@ -15,30 +14,29 @@ function Characters({
 
   const handlePageClick = async () => {
     setOffset(parseInt(offset + 50));
-    const charactersFromServer = await getCharacters(offset);
+    const charactersFromServer = await getAllCharacters(offset);
     setMarvelCharacters(charactersFromServer);
   };
   return (
     <>
-      {/* <div>
-        {marvelCharacters?.results?.map((character) => {
+      <div className="allCharacterCards">
+        {marvelCharacters.results?.map((character) => {
           return <CharacterCard character={character} />;
         })}
-      </div> */}
-      <div className="allCharacterCards">
-        <CharacterCard />
       </div>
-
-      <ReactPaginate
-        previousLabel={"<< 🦸‍♂️"}
-        nextLabel={"🦸 >>"}
-        breakLabel={"❕❕❕"}
-        pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
-        onPageChange={() => handlePageClick()}
-        containerClassName={"paginate"}
-      />
+      <div className="push"></div>
+      <footer className="footer">
+        <ReactPaginate
+          previousLabel={"<< 🦸‍♂️"}
+          nextLabel={"🦸 >>"}
+          breakLabel={"❕❕❕"}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={() => handlePageClick()}
+          containerClassName={"paginate"}
+        />
+      </footer>
     </>
   );
 }

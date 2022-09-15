@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
+import { getSearchedCharacters } from "../api/heros";
+const API_KEY = process.env.REACT_APP_API_URL_KEY;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function SearchBar({ marvelCharacters }) {
+function SearchBar({ marvelCharacters, setMarvelCharacters }) {
   const navigate = useNavigate();
+  const input = useRef("");
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -25,6 +29,20 @@ function SearchBar({ marvelCharacters }) {
     setSuggestions([]);
   };
 
+  const handleClick = async () => {
+    const value = input.current.value;
+
+    if (value === "") return;
+    else {
+      const getCharactersInfo = async (value) => {
+        getSearchedCharacters(value).then((data) =>
+          setMarvelCharacters(data.data)
+        );
+      };
+      getCharactersInfo();
+    }
+  };
+
   return (
     <div>
       <input
@@ -38,6 +56,7 @@ function SearchBar({ marvelCharacters }) {
             setSuggestions([]);
           }, 1000);
         }}
+        ref={input}
       ></input>
       {suggestions &&
         suggestions.map((suggestion, i) => {
@@ -51,7 +70,7 @@ function SearchBar({ marvelCharacters }) {
             </div>
           );
         })}
-      <button className="searchBarBtn">
+      <button className="searchBarBtn" onClick={() => handleClick()}>
         <b>Search</b>
       </button>
     </div>

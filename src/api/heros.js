@@ -1,65 +1,37 @@
-const APIURL = process.env.REACT_APP_API_URL;
+import MD5 from "crypto-js/md5";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+const API_KEY = process.env.REACT_APP_API_URL_KEY;
 
-export const getCharacters = async () => {
-  const res = await fetch(`${APIURL}/playlist`);
+export const getAllCharacters = async (offset) => {
+  const res = await fetch(
+    `${BASE_URL}?limit=50&offset=${offset}&apikey=${API_KEY}`
+  );
   return res.json();
 };
 
-export const getOnePlaylist = async (id) => {
-  const res = await fetch(`${APIURL}/playlistss/${id}`);
+export const getSearchedCharacters = async (value) => {
+  const res = await fetch(
+    `${BASE_URL}?nameStartsWith=${value}&apikey=${API_KEY}`
+  );
   return res.json();
 };
 
-export const addOnePlaylist = async (newPlaylist) => {
-  const response = await fetch(`${APIURL}/playlist`, {
-    method: "POST",
-    mode: "cors",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newPlaylist),
-  });
-  return response.json();
-};
-
-export const editOnePlaylist = async (data) => {
-  const response = await fetch(`${APIURL}/playlist/${data.id}`, {
-    method: "PUT",
-    mode: "cors",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-};
-
-export const deletePlaylists = async (id) => {
-  const response = fetch(`${APIURL}/playlist/${id}`, {
-    method: "DELETE",
-    mode: "cors",
-    cache: "no-cache",
-  });
-  return response;
-};
-export const deleteSongPlaylist = async (id, songId) => {
-  const response = fetch(`${APIURL}/playlist/${id}/${songId}`, {
-    method: "DELETE",
-    mode: "cors",
-    cache: "no-cache",
-  });
-
-  return response;
-};
-
-export const getSongInAllPlaylists = async (songId) => {
-  const res = await fetch(`${APIURL}/playlist/${songId}`);
+export const getCharacterInfo = async (value) => {
+  const res = await fetch(`${BASE_URL}/${value}?apikey=${API_KEY}`);
   return res.json();
 };
 
-export const getArtistInAllPlaylists = async (artistId) => {
-  const res = await fetch(`${APIURL}/playlists/${artistId}`);
+export const getCharacterSeries = async (value) => {
+  const res = await fetch(`${BASE_URL}${value}/series?apikey=${API_KEY}`);
+  return res.json();
+};
+
+export const getCharacterStories = async (value) => {
+  const res = await fetch(`${BASE_URL}${value}/stories?apikey=${API_KEY}`);
+  return res.json();
+};
+
+export const getCharacterComics = async (value) => {
+  const res = await fetch(`${BASE_URL}${value}/comics?apikey=${API_KEY}`);
   return res.json();
 };

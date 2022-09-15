@@ -2,3 +2,6 @@
   text-align: center;
   font-family: "Bangers", cursive;
 }
+.pointer {
+  cursor: pointer;
+}

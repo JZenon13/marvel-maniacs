@@ -6,7 +6,7 @@ function LandingPage({ enterSite, setEnterSite }) {
   const navigate = useNavigate();
   return (
     <div className="landingBackground">
-      <h1>Do you need a Hero (...or two)</h1>
+      <h1 className="siteTitleText">Do you need a Hero (...or two)</h1>
 
       <div className="pillsImages">
         <div className="popUpText">

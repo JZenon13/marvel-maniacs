@@ -9,7 +9,10 @@ import Team from "./teams/Team";
 import Research from "./content/Research";
 import Character from "./Characters/Characters";
 import SingleCharacterPage from "./Characters/SingleCharacterPage";
-const APIURL = process.env.REACT_APP_API_URL;
+import SingleCharacterSeriesPage from "./Characters/SingleCharacterSeriesPage";
+import SingleCharacterStoriesPage from "./Characters/SingleCharacterStoriesPage";
+import SingleCharacterComicsPage from "./Characters/SingleCharacterComicsPage";
+import { getAllCharacters } from "./api/heros";
 
 function App() {
   const [enterSite, setEnterSite] = useState(false);
@@ -17,12 +20,8 @@ function App() {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const getCharacters = async () => {
-      fetch(
-        `https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=${offset}&apikey=${APIURL}`
-      )
-        .then((res) => res.json())
-        .then((data) => setMarvelCharacters(data.data));
+    const getCharacters = async (offset) => {
+      getAllCharacters(offset).then((data) => setMarvelCharacters(data.data));
     };
     getCharacters();
   }, [offset]);
@@ -30,7 +29,10 @@ function App() {
   return (
     <div className="App">
       {window.location.pathname === "/" ? null : (
-        <NavBar marvelCharacters={marvelCharacters} />
+        <NavBar
+          marvelCharacters={marvelCharacters}
+          setMarvelCharacters={setMarvelCharacters}
+        />
       )}
       <Routes>
         <Route
@@ -53,6 +55,18 @@ function App() {
           }
         />
         <Route path="/character/:id" element={<SingleCharacterPage />} />
+        <Route
+          path="/character/series/:id"
+          element={<SingleCharacterSeriesPage />}
+        />
+        <Route
+          path="/character/stories/:id"
+          element={<SingleCharacterStoriesPage />}
+        />
+        <Route
+          path="/character/comics/:id"
+          element={<SingleCharacterComicsPage />}
+        />
       </Routes>
     </div>
   );

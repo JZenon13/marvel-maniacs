@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import "./NavBar.css";
 
-function NavBar({ marvelCharacters }) {
+function NavBar({ marvelCharacters, setMarvelCharacters }) {
   return (
     <>
       <header>
@@ -11,7 +11,10 @@ function NavBar({ marvelCharacters }) {
           <Link to="/home">Home</Link>
           <Link to="/characters">Characters</Link>
           <Link to="/teams">Teams</Link>
-          <SearchBar marvelCharacters={marvelCharacters} />
+          <SearchBar
+            marvelCharacters={marvelCharacters}
+            setMarvelCharacters={setMarvelCharacters}
+          />
         </div>
         <div className="siteTitle">
           <b>Marvel Mania</b>
