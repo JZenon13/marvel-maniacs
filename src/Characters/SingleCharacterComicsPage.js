@@ -14,11 +14,7 @@ function SingleCharacterComicsPage() {
     };
     getCharacterComicInfo();
   }, [params.id]);
-  return (
-    <div>
-      <h1>Comics (...no introduction needed)</h1>
-    </div>
-  );
+  return <div>one</div>;
 }
 
 export default SingleCharacterComicsPage;

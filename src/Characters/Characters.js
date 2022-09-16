@@ -3,6 +3,7 @@ import CharacterCard from "./CharacterCard";
 import "./characters.css";
 import ReactPaginate from "react-paginate";
 import { getAllCharacters } from "../api/heros";
+import CharacterSearchBar from "./CharacterSearchBar";
 
 function Characters({
   marvelCharacters,
@@ -19,6 +20,10 @@ function Characters({
   };
   return (
     <>
+      <CharacterSearchBar
+        marvelCharacters={marvelCharacters}
+        setMarvelCharacters={setMarvelCharacters}
+      />
       <div className="allCharacterCards">
         {marvelCharacters.results?.map((character) => {
           return <CharacterCard character={character} />;

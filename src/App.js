@@ -6,11 +6,14 @@ import LandingPage from "./LandingPage/LandingPage";
 import ExitPage from "./LandingPage/ExitPage";
 import Home from "./Home/Home";
 import Team from "./teams/Team";
-import Research from "./content/Research";
+import Research from "./Content/Research";
 import Character from "./Characters/Characters";
 import SingleCharacterPage from "./Characters/SingleCharacterPage";
+import Series from "./Content/Series";
 import SingleCharacterSeriesPage from "./Characters/SingleCharacterSeriesPage";
-import SingleCharacterStoriesPage from "./Characters/SingleCharacterStoriesPage";
+import Events from "./Content/Events";
+import SingleCharacterStoriesPage from "./Characters/SingleCharacterEventsPage";
+import Comics from "./Content/Comics";
 import SingleCharacterComicsPage from "./Characters/SingleCharacterComicsPage";
 import { getAllCharacters } from "./api/heros";
 
@@ -55,14 +58,17 @@ function App() {
           }
         />
         <Route path="/character/:id" element={<SingleCharacterPage />} />
+        <Route path="series/" element={<Series />} />
         <Route
           path="/character/series/:id"
           element={<SingleCharacterSeriesPage />}
         />
+        <Route path="/events/" element={<Events />} />
         <Route
           path="/character/stories/:id"
           element={<SingleCharacterStoriesPage />}
         />
+        <Route path="/comics/" element={<Comics />} />
         <Route
           path="/character/comics/:id"
           element={<SingleCharacterComicsPage />}

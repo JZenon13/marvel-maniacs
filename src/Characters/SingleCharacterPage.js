@@ -39,16 +39,16 @@ function SingleCharacterPage() {
                 </u>
               </i>
               {"  "}
-              series
+              Series
             </h2>
             <h2>
               In{" "}
               <i className="pointer">
                 <u onClick={() => navigate(`/character/stories/${params.id}`)}>
-                  {character.stories.items.length}
+                  {character.events.items.length}
                 </u>
               </i>{" "}
-              stories
+              Events
             </h2>
           </div>
         );

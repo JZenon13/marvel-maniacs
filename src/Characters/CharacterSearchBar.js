@@ -1,11 +1,9 @@
 import React, { useState, useRef } from "react";
-import "./NavBar.css";
+import "./characters.css";
 import { useNavigate } from "react-router-dom";
 import { getSearchedCharacters } from "../api/heros";
-const API_KEY = process.env.REACT_APP_API_URL_KEY;
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function SearchBar({ marvelCharacters, setMarvelCharacters }) {
+function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
   const navigate = useNavigate();
   const input = useRef("");
   const [searchText, setSearchText] = useState("");
@@ -34,7 +32,7 @@ function SearchBar({ marvelCharacters, setMarvelCharacters }) {
 
     if (value === "") return;
     else {
-      const getCharactersInfo = async (value) => {
+      const getCharactersInfo = async () => {
         getSearchedCharacters(value).then((data) =>
           setMarvelCharacters(data.data)
         );
@@ -48,7 +46,7 @@ function SearchBar({ marvelCharacters, setMarvelCharacters }) {
       <input
         className="searchBar"
         type="text"
-        placeholder="Search..."
+        placeholder="Search Characters..."
         value={searchText}
         onChange={(e) => onChangehandler(e.target.value)}
         onBlur={() => {
@@ -77,4 +75,4 @@ function SearchBar({ marvelCharacters, setMarvelCharacters }) {
   );
 }
 
-export default SearchBar;
+export default CharacterSearchBar;

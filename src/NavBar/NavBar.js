@@ -1,20 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
 import "./NavBar.css";
 
-function NavBar({ marvelCharacters, setMarvelCharacters }) {
+function NavBar() {
   return (
     <>
       <header>
         <div>
           <Link to="/home">Home</Link>
           <Link to="/characters">Characters</Link>
+          <Link to="/comics">Comics</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/series">Series</Link>
           <Link to="/teams">Teams</Link>
-          <SearchBar
-            marvelCharacters={marvelCharacters}
-            setMarvelCharacters={setMarvelCharacters}
-          />
         </div>
         <div className="siteTitle">
           <b>Marvel Mania</b>
