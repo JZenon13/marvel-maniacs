@@ -69,3 +69,23 @@ footer {
 .suggestion:hover {
   background-color: gray;
 }
+
+.characterInfo {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.characterList {
+  display: inline-block;
+  padding: 5px;
+  overflow-wrap: normal;
+}
+.list {
+  list-style: none;
+}
+.sorry {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

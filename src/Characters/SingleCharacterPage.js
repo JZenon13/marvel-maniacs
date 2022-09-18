@@ -17,12 +17,12 @@ function SingleCharacterPage() {
 
   return (
     <div>
-      {characterInfo.map((character) => {
+      {characterInfo?.map((character) => {
         return (
           <div key={character.id}>
             <h1>{character.name}</h1>
             <img
-              className="characterImg"
+              className="ssCardImg"
               src={
                 character.thumbnail["path"] +
                 "." +
@@ -30,26 +30,41 @@ function SingleCharacterPage() {
               }
               alt=""
             />
-            <p>{character.description}</p>
-            <h2>
-              In{" "}
-              <i className="pointer">
-                <u onClick={() => navigate(`/character/series/${params.id}`)}>
-                  {character.series.items.length}
-                </u>
-              </i>
-              {"  "}
-              Series
-            </h2>
-            <h2>
-              In{" "}
-              <i className="pointer">
-                <u onClick={() => navigate(`/character/stories/${params.id}`)}>
-                  {character.events.items.length}
-                </u>
-              </i>{" "}
-              Events
-            </h2>
+            <p className="descriptionText">
+              {character.description === ("" || null)
+                ? `no description available for ${character.name}`
+                : character.description}
+            </p>
+            <hr></hr>
+            <div className="characterInfo">
+              <h2>
+                <i className="pointer">
+                  <u onClick={() => navigate(`/character/${params.id}/series`)}>
+                    {character.series.available}
+                  </u>
+                </i>
+                {"  "} Series{"  "}
+              </h2>
+
+              <h2>
+                {"  "} ,{"  "}
+                <i className="pointer">
+                  <u onClick={() => navigate(`/character/${params.id}/events`)}>
+                    {character.events.available}
+                  </u>
+                </i>{" "}
+                Events
+              </h2>
+              <h2>
+                {"  "} , {"  "}
+                <i className="pointer">
+                  <u onClick={() => navigate(`/character/${params.id}/comics`)}>
+                    {character.comics.available}
+                  </u>
+                </i>{" "}
+                Comics
+              </h2>
+            </div>
           </div>
         );
       })}

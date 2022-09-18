@@ -13,15 +13,18 @@ function Events() {
     if (value === "") return;
     else {
       const getEventInfo = async () => {
-        getSearchedEvents(value).then((data) => setAllEvents(data));
+        getSearchedEvents(value).then((data) =>
+          setAllEvents(data.data.results)
+        );
       };
       getEventInfo();
     }
   };
+
   return (
     <div>
       <h1>What are Events?</h1>
-      <p>
+      <p className="descriptionText">
         Events also known as “Story Arcs” continue a story that carries through
         multiple comic books for example, Batman: Knight Fall and Marvel’s Civil
         War.Starting a new story arc will not give you any backstory on a
@@ -38,20 +41,23 @@ function Events() {
         Search
       </button>
       <img src=" " alt="" />
-      {allEvents.map((events) => {
-        return (
-          <div>
-            <h2>{events.title}</h2>
-            <img
-              onDoubleClick={() => navigate(`/character/events/${events.id}`)}
-              src={
-                events.thumbnail["path"] + "." + events.thumbnail["extension"]
-              }
-              alt=""
-            />
-          </div>
-        );
-      })}
+      <div className="researchSearch">
+        {allEvents?.map((events) => {
+          return (
+            <div key={events.id} className="researchCard">
+              <h2>{events.title}</h2>
+              <img
+                className="researchSearchImg"
+                onDoubleClick={() => navigate(`/events/${events.id}`)}
+                src={
+                  events.thumbnail["path"] + "." + events.thumbnail["extension"]
+                }
+                alt=""
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

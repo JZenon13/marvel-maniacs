@@ -1,0 +1,141 @@
+.card {
+  background: white;
+  border-radius: 1rem;
+  /* padding: 2rem; */
+  margin-left: -2rem;
+  box-shadow: 4px 4px 12px 2px rgba(black, 0.7);
+  transition: 0.2s;
+}
+.card:not(:first-child) {
+  margin-left: -4rem;
+}
+.card:hover {
+  transform: translate(-1rem);
+}
+.card:hover ~ .card {
+  transform: translate(4rem);
+}
+
+.cards {
+  display: inline-flex;
+  gap: -20px;
+}
+
+.searchBar {
+  border-radius: 10px;
+  width: 25%;
+  height: 25px;
+}
+
+.searchBarBtn {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: #6a0c0b;
+  border-radius: 8px;
+  margin: 1px;
+  padding: 4.5px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: #fff;
+}
+
+.tImg {
+  max-width: 100%;
+  border-radius: 15px;
+}
+.teamImg {
+  max-width: 50%;
+  padding: none;
+}
+.tCard {
+  block-size: fit-content;
+  border: 10px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
+  cursor: pointer;
+  height: 425px;
+  width: 300px;
+}
+.teamCard {
+  justify-content: center;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cardBtn {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: black;
+  border-radius: 8px;
+  margin: 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: #fff;
+}
+
+.forward {
+  display: flex;
+  justify-content: right;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal,
+.overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(128, 128, 128, 0.715);
+}
+.modal-content {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 3;
+  background: rgb(14, 12, 57);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 100%);
+  padding: 14px 28px;
+  border-radius: 10px;
+  max-width: 100px;
+  min-width: 300px;
+  color: black;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  border: #bc0505;
+  border-radius: 5px;
+}
+
+.finalTeamBtn {
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}

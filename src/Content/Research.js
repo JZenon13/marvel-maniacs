@@ -8,28 +8,28 @@ function Research() {
   return (
     <div className="researchOptions">
       <div>
-        <h2>Series</h2>
+        <h1>Series</h1>
         <img
-          className="pointer"
-          src="https://m.media-amazon.com/images/I/61KFLylOgPL.jpg"
+          className="pointer researchImg"
+          src="./images/series.png"
           alt=""
           onClick={() => navigate("/series")}
         />
       </div>
       <div>
-        <h2>Comics</h2>
+        <h1>Comics</h1>
         <img
-          className="pointer"
-          src="https://upload.wikimedia.org/wikipedia/en/6/6d/Marvel%27s_Netflix_poster.jpg"
+          className="pointer researchImg"
+          src="./images/comics.png"
           alt=""
           onClick={() => navigate("/comics")}
         />
       </div>
       <div>
-        <h2>Events</h2>
+        <h1>Events</h1>
         <img
-          className="pointer"
-          src="https://images-na.ssl-images-amazon.com/images/I/51e7InvVkbL._SX347_BO1,204,203,200_.jpg"
+          className="pointer researchImg"
+          src="./images/events.png"
           alt=""
           onClick={() => navigate("/events")}
         />

@@ -10,12 +10,16 @@ import Research from "./Content/Research";
 import Character from "./Characters/Characters";
 import SingleCharacterPage from "./Characters/SingleCharacterPage";
 import Series from "./Content/Series";
-import SingleCharacterSeriesPage from "./Characters/SingleCharacterSeriesPage";
+import SingleSeriesPage from "./Content/SingleSeriesPage";
 import Events from "./Content/Events";
-import SingleCharacterStoriesPage from "./Characters/SingleCharacterEventsPage";
+import SingleEventsPage from "./Content/SingleEventsPage";
 import Comics from "./Content/Comics";
-import SingleCharacterComicsPage from "./Characters/SingleCharacterComicsPage";
+import SingleComicsPage from "./Content/SingleComicsPage";
 import { getAllCharacters } from "./api/heros";
+import SingleCharacterSeriesPage from "./Characters/SingleCharacterSeriesPage";
+import SingleCharacterComicsPage from "./Characters/SingleCharacterComicsPage";
+import SingleCharacterEventsPage from "./Characters/SingleCharacterEventsPage";
+import BuiltTeam from "./teams/BuiltTeam";
 
 function App() {
   const [enterSite, setEnterSite] = useState(false);
@@ -58,21 +62,25 @@ function App() {
           }
         />
         <Route path="/character/:id" element={<SingleCharacterPage />} />
-        <Route path="series/" element={<Series />} />
+        <Route path="/series" element={<Series />} />
         <Route
-          path="/character/series/:id"
+          path="/character/:id/series"
           element={<SingleCharacterSeriesPage />}
         />
+        <Route path="/series/:id" element={<SingleSeriesPage />} />
         <Route path="/events/" element={<Events />} />
         <Route
-          path="/character/stories/:id"
-          element={<SingleCharacterStoriesPage />}
+          path="/character/:id/events"
+          element={<SingleCharacterEventsPage />}
         />
+        <Route path="/events/:id" element={<SingleEventsPage />} />
         <Route path="/comics/" element={<Comics />} />
         <Route
-          path="/character/comics/:id"
+          path="/character/:id/comics"
           element={<SingleCharacterComicsPage />}
         />
+        <Route path="/comics/:id" element={<SingleComicsPage />} />
+        <Route path="/builtteam" element={<BuiltTeam />} />
       </Routes>
     </div>
   );

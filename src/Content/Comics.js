@@ -13,7 +13,9 @@ function Comics() {
     if (value === "") return;
     else {
       const getComicInfo = async () => {
-        getSearchedComics(value).then((data) => setAllComics(data));
+        getSearchedComics(value).then((data) =>
+          setAllComics(data.data.results)
+        );
       };
       getComicInfo();
     }
@@ -24,27 +26,30 @@ function Comics() {
       <input
         className="searchBar"
         type="text"
-        placeholder="Comics"
+        placeholder="Search Comics"
         ref={input}
       />
       <img src=" " alt="" />
       <button className="searchBarBtn" onClick={() => handleClick()}>
         Search
       </button>
-      {allComics.map((comics) => {
-        return (
-          <div>
-            <h2>{comics.title}</h2>
-            <img
-              onDoubleClick={() => navigate(`/character/comics/${comics.id}`)}
-              src={
-                comics.thumbnail["path"] + "." + comics.thumbnail["extension"]
-              }
-              alt=""
-            />
-          </div>
-        );
-      })}
+      <div className="researchSearch">
+        {allComics?.map((comics) => {
+          return (
+            <div key={comics.id} className="researchCard">
+              <h2>{comics.title}</h2>
+              <img
+                className="researchSearchImg"
+                onDoubleClick={() => navigate(`/comics/${comics.id}`)}
+                src={
+                  comics.thumbnail["path"] + "." + comics.thumbnail["extension"]
+                }
+                alt=""
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ function Series() {
   };
 
   return (
-    <div>
+    <div className="seriesBackground">
       <h1>What's A series</h1>
       <p className="descriptionText">
         What a series is, that’s pretty basic. It’s the entire catalog of a
@@ -50,20 +50,23 @@ function Series() {
       >
         Search
       </button>
-      {allSeries.map((series) => {
-        return (
-          <div>
-            <h2>{series.title}</h2>
-            <img
-              onDoubleClick={() => navigate(`/character/series/${series.id}`)}
-              src={
-                series.thumbnail["path"] + "." + series.thumbnail["extension"]
-              }
-              alt=""
-            />
-          </div>
-        );
-      })}
+      <div className="researchSearch">
+        {allSeries?.map((series) => {
+          return (
+            <div key={series.id} className="researchCard">
+              <h2>{series.title}</h2>
+              <img
+                className="researchSearchImg"
+                onDoubleClick={() => navigate(`/series/${series.id}`)}
+                src={
+                  series.thumbnail["path"] + "." + series.thumbnail["extension"]
+                }
+                alt=""
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
