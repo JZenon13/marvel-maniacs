@@ -50,6 +50,7 @@ function Series() {
       >
         Search
       </button>
+      <hr></hr>
       <div className="researchSearch">
         {allSeries?.map((series) => {
           return (

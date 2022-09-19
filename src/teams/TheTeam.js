@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function TheTeam({ theTeam, setTheTeam }) {
   const handleDelete = (hero) => {
@@ -9,12 +9,12 @@ function TheTeam({ theTeam, setTheTeam }) {
   };
 
   return (
-    <>
+    <div className="cards">
       {theTeam.map((t) => {
         return (
-          <div className="tCard">
+          <div className="tCard card">
             <img
-              className="tImg"
+              className="tImg "
               src={t.thumbnail["path"] + "." + t.thumbnail["extension"]}
               alt=""
             />
@@ -30,7 +30,7 @@ function TheTeam({ theTeam, setTheTeam }) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

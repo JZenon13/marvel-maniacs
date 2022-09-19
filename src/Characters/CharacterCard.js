@@ -8,7 +8,7 @@ function CharacterCard({ character }) {
       <h2>{character.name}</h2>
       <img
         className="characterImg"
-        onDoubleClick={() => navigate(`/character/${character.id}`)}
+        onClick={() => navigate(`/character/${character.id}`)}
         src={
           character.thumbnail["path"] + "." + character.thumbnail["extension"]
         }

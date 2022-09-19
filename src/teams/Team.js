@@ -1,30 +1,27 @@
 import React, { useState, useRef } from "react";
 import "./teams.css";
 import TheTeam from "./TheTeam";
-import { useNavigate } from "react-router-dom";
-import { getOneCharacter } from "../api/heros";
+import { getSearchedCharacters } from "../api/heros";
 import TeamCard from "./TeamCard";
 import FinalTeam from "./FinalTeam";
-// import BuiltTeam from "./BuiltTeam";
 
-function Team({ theTeam, setTheTeam }) {
-  const navigate = useNavigate();
+function Team({ theTeam, setTheTeam, setTeamName, teamName }) {
   const input = useRef("");
   const [member, setMember] = useState([]);
-  const [teamName, setTeamName] = useState("Team Marvel");
   const [editMode, setEditMode] = useState(false);
   const [finalTeam, setFinalTeam] = useState(false);
-  // const [builtteam, setBuiltTeam] = useState(false);
 
   const handleClick = async () => {
     const value = input.current.value;
 
     if (value === "") return;
     else {
-      const getCharacterCard = async () => {
-        getOneCharacter(value).then((data) => setMember(data.data.results));
+      const getCharactersInfo = async () => {
+        getSearchedCharacters(value).then((data) =>
+          setMember(data.data.results)
+        );
       };
-      getCharacterCard();
+      getCharactersInfo();
     }
   };
 
@@ -46,14 +43,23 @@ function Team({ theTeam, setTheTeam }) {
             placeholder="Name your Team!"
             onChange={(e) => setTeamName(e.target.value)}
           ></input>
-          <i className="pointer" onClick={() => setEditMode(!editMode)}>
+          <span
+            className="pointer teamName"
+            onClick={() => setEditMode(!editMode)}
+          >
             ✔️
-          </i>
+          </span>
         </>
       ) : (
-        <h1 className="pointer">
+        <h1>
           {teamName}
-          <i onClick={() => setEditMode(!editMode)}> ...🖊️</i>
+          <span
+            className="pointer teamName"
+            onClick={() => setEditMode(!editMode)}
+          >
+            {" "}
+            ...🖊️
+          </span>
         </h1>
       )}
 
@@ -67,7 +73,7 @@ function Team({ theTeam, setTheTeam }) {
         <b>Search</b>
       </button>
       <div className="teamCard">
-        {member?.map((memberInfo) => {
+        {member?.slice(0, 4).map((memberInfo) => {
           return (
             <TeamCard
               memberInfo={memberInfo}

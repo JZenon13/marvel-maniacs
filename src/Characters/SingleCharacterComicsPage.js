@@ -27,12 +27,6 @@ function SingleCharacterComicsPage() {
       {singleCharacterComics.length === 0 ? (
         <>
           <div className="sorry">
-            <h4
-              className="back pointer"
-              onClick={() => navigate(`/character/${params.id}`)}
-            >
-              👈 Back
-            </h4>
             <h1>No Events</h1>
           </div>
           <img src="/images/marvel.png" alt=""></img>
@@ -48,9 +42,8 @@ function SingleCharacterComicsPage() {
                   comic.thumbnail["path"] + "." + comic.thumbnail["extension"]
                 }
                 alt=""
-              />{" "}
+              />
               <p>
-                {" "}
                 {comic.description === ("" || null)
                   ? `no description available for ${comic.title}`
                   : comic.description}
@@ -64,7 +57,7 @@ function SingleCharacterComicsPage() {
                 <u className="pointer" onClick={() => navigate("/comics")}>
                   here
                 </u>{" "}
-                for more
+                for more comics
               </p>
             </div>
           );

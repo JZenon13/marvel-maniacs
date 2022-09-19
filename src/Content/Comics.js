@@ -29,10 +29,11 @@ function Comics() {
         placeholder="Search Comics"
         ref={input}
       />
-      <img src=" " alt="" />
+
       <button className="searchBarBtn" onClick={() => handleClick()}>
         Search
       </button>
+      <hr></hr>
       <div className="researchSearch">
         {allComics?.map((comics) => {
           return (

@@ -2,7 +2,9 @@
   max-width: 90%;
   max-height: 50%;
 }
-
+.center {
+  margin-left: 200%;
+}
 .allCharacterCards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -22,26 +24,15 @@
   cursor: pointer;
 }
 .paginate {
-  list-style: none;
   display: flex;
-  margin-left: 40%;
-  position: absolute;
-  bottom: 10px;
-  gap: 20px;
+  justify-content: center;
   cursor: pointer;
 }
-
-footer {
-  background: #42a5f5;
-  color: white;
-  margin: 5px;
-  /* line-height: -20px; */
-  /* padding: 0 20px; */
-}
-.footer,
-.push {
-  position: sticky;
-  height: 50px;
+.paginateBtns {
+  margin-top: 5%;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .searchBar {

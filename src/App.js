@@ -26,12 +26,12 @@ function App() {
   const [marvelCharacters, setMarvelCharacters] = useState([]);
   const [offset, setOffset] = useState(0);
   const [theTeam, setTheTeam] = useState([]);
+  const [teamName, setTeamName] = useState("Team Marvel");
 
   useEffect(() => {
-    const getCharacters = async (offset) => {
-      getAllCharacters(offset).then((data) => setMarvelCharacters(data.data));
-    };
-    getCharacters();
+    getAllCharacters(offset).then((data) =>
+      setMarvelCharacters(data.data.results)
+    );
   }, [offset]);
 
   return (
@@ -51,7 +51,14 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route
           path="/teams"
-          element={<Team theTeam={theTeam} setTheTeam={setTheTeam} />}
+          element={
+            <Team
+              theTeam={theTeam}
+              setTheTeam={setTheTeam}
+              setTeamName={setTeamName}
+              teamName={teamName}
+            />
+          }
         />
         <Route path="/research" element={<Research />} />
         <Route
@@ -84,7 +91,10 @@ function App() {
           element={<SingleCharacterComicsPage />}
         />
         <Route path="/comics/:id" element={<SingleComicsPage />} />
-        <Route path="/builtteam" element={<BuiltTeam theTeam={theTeam} />} />
+        <Route
+          path="/builtteam"
+          element={<BuiltTeam theTeam={theTeam} teamName={teamName} />}
+        />
       </Routes>
     </div>
   );

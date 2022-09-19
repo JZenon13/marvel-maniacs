@@ -14,7 +14,7 @@ function LandingPage({ enterSite, setEnterSite }) {
             className="pillsImages1"
             src="./images/Red.png"
             alt=""
-            onDoubleClick={() => {
+            onClick={() => {
               navigate("/home");
               setEnterSite(!enterSite);
             }}
@@ -25,7 +25,7 @@ function LandingPage({ enterSite, setEnterSite }) {
             className="pillsImages2"
             src="./images/blue.png"
             alt=""
-            onDoubleClick={() => navigate("/goodbye")}
+            onClick={() => navigate("/goodbye")}
           />
         </div>
       </div>

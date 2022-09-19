@@ -40,7 +40,7 @@ function Events() {
       <button className="searchBarBtn" onClick={() => handleClick()}>
         Search
       </button>
-      <img src=" " alt="" />
+      <hr></hr>
       <div className="researchSearch">
         {allEvents?.map((events) => {
           return (

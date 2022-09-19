@@ -1,4 +1,3 @@
-import MD5 from "crypto-js/md5";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_URL_KEY;
 

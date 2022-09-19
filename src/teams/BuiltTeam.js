@@ -1,9 +1,9 @@
 import React from "react";
 
-function BuiltTeam({ theTeam }) {
+function BuiltTeam({ theTeam, teamName }) {
   return (
     <>
-      <h1>Us</h1>
+      <h1>{teamName}</h1>
       {theTeam?.map((team) => {
         return (
           <>

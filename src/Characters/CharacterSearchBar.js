@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
 import "./characters.css";
-import { useNavigate } from "react-router-dom";
 import { getSearchedCharacters } from "../api/heros";
 
 function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
-  const navigate = useNavigate();
   const input = useRef("");
+
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -34,15 +33,21 @@ function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
     else {
       const getCharactersInfo = async () => {
         getSearchedCharacters(value).then((data) =>
-          setMarvelCharacters(data.data)
+          setMarvelCharacters(data.data.results)
         );
       };
       getCharactersInfo();
     }
   };
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <div>
+      <button className="searchBarBtn" onClick={refreshPage}>
+        All Characters
+      </button>
       <input
         className="searchBar"
         type="text"
@@ -52,7 +57,7 @@ function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
         onBlur={() => {
           setTimeout(() => {
             setSuggestions([]);
-          }, 1000);
+          }, 100);
         }}
         ref={input}
       ></input>

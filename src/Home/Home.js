@@ -11,13 +11,13 @@ function Home() {
         <img
           src="/images/hulk_reading.png"
           alt=""
-          onDoubleClick={() => navigate("/research")}
+          onClick={() => navigate("/research")}
         />
       </div>
       <div className="buildTeamCard">
         <h2>Squad up</h2>
         <img
-          onDoubleClick={() => navigate("/teams")}
+          onClick={() => navigate("/teams")}
           src="/images/superheroteam.png"
           alt=""
         />

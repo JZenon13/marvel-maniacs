@@ -28,12 +28,6 @@ function SingleCharacterSeriesPage() {
       {singleCharacterSeries.length === 0 ? (
         <>
           <div className="sorry">
-            <h4
-              className="back pointer"
-              onClick={() => navigate(`/character/${params.id}`)}
-            >
-              👈 Back
-            </h4>
             <h1>No Events</h1>
           </div>
           <img src="/images/marvel.png" alt=""></img>
@@ -56,7 +50,6 @@ function SingleCharacterSeriesPage() {
                   alt=""
                 />
                 <p className="descriptionText">
-                  {" "}
                   {series.description === ("" || null)
                     ? `no description available for ${series.name}`
                     : series.description}

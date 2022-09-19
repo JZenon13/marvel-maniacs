@@ -2,17 +2,17 @@ import React from "react";
 
 function TeamCard({ memberInfo, theTeam, setTheTeam }) {
   return (
-    <div className="tCard">
+    <div className="memberCard">
       <h2>{memberInfo.name}</h2>
       <img
-        className="tImg"
+        className="memberImg"
         src={
           memberInfo.thumbnail["path"] + "." + memberInfo.thumbnail["extension"]
         }
         alt=""
       />
       <button
-        className="cardBtn"
+        className="memberCardBtn"
         onClick={() => setTheTeam([...theTeam, memberInfo])}
       >
         <b>🦸 Add To Team 🦸‍♂️</b>
