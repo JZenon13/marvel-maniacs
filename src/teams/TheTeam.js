@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 function TheTeam({ theTeam, setTheTeam }) {
-  const [sayYes, setSayYes] = useState(false);
-
   const handleDelete = (hero) => {
     const newTeam = theTeam.filter((t) => {
       return t.id !== hero.id;
@@ -20,12 +18,15 @@ function TheTeam({ theTeam, setTheTeam }) {
               src={t.thumbnail["path"] + "." + t.thumbnail["extension"]}
               alt=""
             />
-            <button className="cardBtn" onClick={() => setSayYes(!sayYes)}>
-              {sayYes ? "Good Choice" : "Keep On Team?"}
+
+            <button className="heroCardBtn" onClick={() => handleDelete(t)}>
+              <b>Remove Hero</b>
             </button>
-            <button className="cardBtn" onClick={() => handleDelete(t)}>
-              Delete From Team
-            </button>
+            <img
+              className="heroEmblem"
+              src="https://i.etsystatic.com/9715836/r/il/030dcd/1477498432/il_794xN.1477498432_1elo.jpg"
+              alt=""
+            />
           </div>
         );
       })}

@@ -5,15 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { getOneCharacter } from "../api/heros";
 import TeamCard from "./TeamCard";
 import FinalTeam from "./FinalTeam";
+// import BuiltTeam from "./BuiltTeam";
 
-function Team() {
+function Team({ theTeam, setTheTeam }) {
   const navigate = useNavigate();
   const input = useRef("");
   const [member, setMember] = useState([]);
-  const [theTeam, setTheTeam] = useState([]);
   const [teamName, setTeamName] = useState("Team Marvel");
   const [editMode, setEditMode] = useState(false);
   const [finalTeam, setFinalTeam] = useState(false);
+  // const [builtteam, setBuiltTeam] = useState(false);
 
   const handleClick = async () => {
     const value = input.current.value;
@@ -36,7 +37,7 @@ function Team() {
       <h4 className="forward pointer" onClick={() => handleFinalTeam()}>
         Ready to take on the world 🌎
       </h4>
-      <h1>Take your Pick</h1>
+
       {editMode ? (
         <>
           <input
@@ -52,7 +53,7 @@ function Team() {
       ) : (
         <h1 className="pointer">
           {teamName}
-          <i onClick={() => setEditMode(!editMode)}>🖊️</i>
+          <i onClick={() => setEditMode(!editMode)}> ...🖊️</i>
         </h1>
       )}
 
@@ -77,6 +78,7 @@ function Team() {
         })}
       </div>
       <hr></hr>
+      <h1>{theTeam.length === 0 ? "No Heros Yet" : "Heros Unite"}</h1>
       <div className="cards">
         {theTeam.length === 0 ? null : (
           <TheTeam theTeam={theTeam} setTheTeam={setTheTeam} />

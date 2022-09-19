@@ -25,6 +25,7 @@ function App() {
   const [enterSite, setEnterSite] = useState(false);
   const [marvelCharacters, setMarvelCharacters] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [theTeam, setTheTeam] = useState([]);
 
   useEffect(() => {
     const getCharacters = async (offset) => {
@@ -48,7 +49,10 @@ function App() {
         />
         <Route path="/goodbye" element={<ExitPage />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/teams" element={<Team />} />
+        <Route
+          path="/teams"
+          element={<Team theTeam={theTeam} setTheTeam={setTheTeam} />}
+        />
         <Route path="/research" element={<Research />} />
         <Route
           path="/characters"
@@ -80,7 +84,7 @@ function App() {
           element={<SingleCharacterComicsPage />}
         />
         <Route path="/comics/:id" element={<SingleComicsPage />} />
-        <Route path="/builtteam" element={<BuiltTeam />} />
+        <Route path="/builtteam" element={<BuiltTeam theTeam={theTeam} />} />
       </Routes>
     </div>
   );

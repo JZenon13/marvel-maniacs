@@ -139,3 +139,60 @@ body.active-modal {
   padding: 5px;
   cursor: pointer;
 }
+
+.heroEmblem {
+  padding: 5px;
+  width: 25%;
+}
+
+.heroCardBtn {
+  width: 100%;
+  font-size: 1rem;
+  display: inline-block;
+  background-color: black;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: #fff;
+}
+
+.heroImg {
+  width: 18%;
+  padding: 5px;
+  border: 10px solid black;
+  animation: marquee 10s linear infinite;
+  white-space: nowrap;
+  font-family: "Courier New", monospace;
+  font-size: x-large;
+  color: #ffffff;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(325%);
+  }
+  to {
+    transform: translateX(-325%);
+  }
+}
+
+.earthImg {
+  width: 20%;
+}
+@keyframes spin3D {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.spin {
+  animation-name: spin3D;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out;
+}

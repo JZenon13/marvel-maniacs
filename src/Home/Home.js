@@ -6,7 +6,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div className="homeBackground cards">
-      <div className="researchCard">
+      <div className="knowMoreCard">
         <h2>I need to know more</h2>
         <img
           src="/images/hulk_reading.png"
