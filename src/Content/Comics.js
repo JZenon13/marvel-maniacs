@@ -22,7 +22,8 @@ function Comics() {
   };
   return (
     <div>
-      <h1>Comics (...no introduction needed)</h1>
+      <h1>What are Comics? </h1>
+      <p className="descriptionText">(...no explanation needed)</p>
       <input
         className="searchBar"
         type="text"
@@ -41,7 +42,7 @@ function Comics() {
               <h2>{comics.title}</h2>
               <img
                 className="researchSearchImg"
-                onDoubleClick={() => navigate(`/comics/${comics.id}`)}
+                onClick={() => navigate(`/comics/${comics.id}`)}
                 src={
                   comics.thumbnail["path"] + "." + comics.thumbnail["extension"]
                 }

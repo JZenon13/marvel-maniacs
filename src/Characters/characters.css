@@ -3,7 +3,8 @@
   max-height: 50%;
 }
 .center {
-  margin-left: 200%;
+  display: inline-block;
+  text-align: center;
 }
 .allCharacterCards {
   display: grid;
@@ -44,7 +45,7 @@
 .searchBarBtn {
   font-size: 1rem;
   display: inline-block;
-  background-color: #6a0c0b;
+  background-color: #bc0505;
   border-radius: 8px;
   margin: 1px;
   padding: 4.5px;

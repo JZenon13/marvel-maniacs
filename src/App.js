@@ -51,24 +51,14 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route
           path="/teams"
-          element={
-            <Team
-              theTeam={theTeam}
-              setTheTeam={setTheTeam}
-              setTeamName={setTeamName}
-              teamName={teamName}
-            />
-          }
+          element={<Team {...{ theTeam, setTheTeam, setTeamName, teamName }} />}
         />
         <Route path="/research" element={<Research />} />
         <Route
           path="/characters"
           element={
             <Character
-              marvelCharacters={marvelCharacters}
-              setMarvelCharacters={setMarvelCharacters}
-              setOffset={setOffset}
-              offset={offset}
+              {...{ marvelCharacters, setMarvelCharacters, setOffset, offset }}
             />
           }
         />
@@ -93,7 +83,7 @@ function App() {
         <Route path="/comics/:id" element={<SingleComicsPage />} />
         <Route
           path="/builtteam"
-          element={<BuiltTeam theTeam={theTeam} teamName={teamName} />}
+          element={<BuiltTeam {...{ theTeam, teamName }} />}
         />
       </Routes>
     </div>

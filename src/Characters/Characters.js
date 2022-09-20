@@ -22,22 +22,25 @@ function Characters({
 
   return (
     <>
-      <h1>Marvel Universe</h1>
+      <h2>Explore the Universe</h2>
       <CharacterSearchBar
         marvelCharacters={marvelCharacters}
         setMarvelCharacters={setMarvelCharacters}
         setOffset={setOffset}
         offset={offset}
       />
-      <div className="allCharacterCards">
-        {marvelCharacters.length === 0 ? (
-          <h2 className="center">No Characters match that search</h2>
-        ) : (
-          marvelCharacters?.map((character) => {
+
+      {marvelCharacters.length === 0 ? (
+        <>
+          <p className="center">No Characters match that search</p>
+        </>
+      ) : (
+        <div className="allCharacterCards">
+          {marvelCharacters?.map((character) => {
             return <CharacterCard character={character} />;
-          })
-        )}
-      </div>
+          })}
+        </div>
+      )}
 
       <div className="paginate">
         {marvelCharacters.length < 50 ? null : (

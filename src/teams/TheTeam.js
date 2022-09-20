@@ -22,11 +22,7 @@ function TheTeam({ theTeam, setTheTeam }) {
             <button className="heroCardBtn" onClick={() => handleDelete(t)}>
               <b>Remove Hero</b>
             </button>
-            <img
-              className="heroEmblem"
-              src="https://i.etsystatic.com/9715836/r/il/030dcd/1477498432/il_794xN.1477498432_1elo.jpg"
-              alt=""
-            />
+            <img className="heroEmblem" src="./images/heroEmblem.png" alt="" />
           </div>
         );
       })}

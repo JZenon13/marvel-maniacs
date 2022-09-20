@@ -7,7 +7,6 @@ function SingleEventsCard({ event }) {
   return (
     <>
       <h4 className="back pointer" onClick={() => navigate("/events")}>
-        {" "}
         👈 Back
       </h4>
 
@@ -29,7 +28,6 @@ function SingleEventsCard({ event }) {
                 )
               }
             >
-              {" "}
               "{event.previous.name}"{" "}
             </u>
           </h3>
@@ -49,7 +47,6 @@ function SingleEventsCard({ event }) {
         </div>
       </div>
       <p>
-        {" "}
         {event.description === (null || "")
           ? `no description available for ${event.title}`
           : event.description}

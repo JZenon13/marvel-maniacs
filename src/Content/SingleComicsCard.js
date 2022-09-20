@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function SingleComicsCard({ comic }) {
   const navigate = useNavigate();
-  console.log(comic);
+
   return (
     <>
       <h4 className="back pointer" onClick={() => navigate("/comics")}>

@@ -19,6 +19,7 @@
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .buildTeamCard {
@@ -29,4 +30,5 @@
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  margin-top: 15px;
 }

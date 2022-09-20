@@ -51,16 +51,17 @@ function Team({ theTeam, setTheTeam, setTeamName, teamName }) {
           </span>
         </>
       ) : (
-        <h1>
-          {teamName}
-          <span
-            className="pointer teamName"
-            onClick={() => setEditMode(!editMode)}
-          >
-            {" "}
-            ...🖊️
-          </span>
-        </h1>
+        <>
+          <h1>
+            {teamName}
+            <span
+              className="pointer teamName"
+              onClick={() => setEditMode(!editMode)}
+            >
+              ...🖊️
+            </span>
+          </h1>
+        </>
       )}
 
       <input

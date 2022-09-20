@@ -31,7 +31,7 @@
 .searchBarBtn {
   font-size: 1rem;
   display: inline-block;
-  background-color: #6a0c0b;
+  background-color: #bc0505;
   border-radius: 8px;
   margin: 1px;
   padding: 4.5px;
@@ -52,8 +52,9 @@
 }
 
 .memberImg {
-  max-width: 100%;
+  max-width: 300px;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .memberCardBtn {
@@ -75,6 +76,7 @@
 .teamImg {
   max-width: 50%;
   padding: none;
+  overflow: hidden;
 }
 .tCard {
   block-size: fit-content;

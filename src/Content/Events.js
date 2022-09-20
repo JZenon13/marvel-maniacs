@@ -25,11 +25,11 @@ function Events() {
     <div>
       <h1>What are Events?</h1>
       <p className="descriptionText">
-        Events also known as “Story Arcs” continue a story that carries through
+        Events also known as “story arcs” continue a story that carries through
         multiple comic books for example, Batman: Knight Fall and Marvel’s Civil
-        War.Starting a new story arc will not give you any backstory on a
-        character and could cause you to get a bit confused if you aren’t
-        familiar with the history of the characters.
+        War.Starting a new "event" and/or "story arc" will not give you any
+        backstory on a character and could cause a get a bit of confusion if you
+        aren’t familiar with the history of the characters.
       </p>
       <input
         className="searchBar"
@@ -48,7 +48,7 @@ function Events() {
               <h2>{events.title}</h2>
               <img
                 className="researchSearchImg"
-                onDoubleClick={() => navigate(`/events/${events.id}`)}
+                onClick={() => navigate(`/events/${events.id}`)}
                 src={
                   events.thumbnail["path"] + "." + events.thumbnail["extension"]
                 }

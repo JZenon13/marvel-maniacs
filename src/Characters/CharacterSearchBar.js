@@ -4,14 +4,13 @@ import { getSearchedCharacters } from "../api/heros";
 
 function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
   const input = useRef("");
-
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
   const onChangehandler = (searchText) => {
     let matches = [];
-    if (searchText.length > 2) {
-      matches = marvelCharacters.results?.filter((character) => {
+    if (searchText.length >= 0) {
+      matches = marvelCharacters?.filter((character) => {
         const regex = new RegExp(`${searchText}`, "gi");
         return character.name.match(regex);
       });
@@ -46,7 +45,7 @@ function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
   return (
     <div>
       <button className="searchBarBtn" onClick={refreshPage}>
-        All Characters
+        <b>All Characters</b>
       </button>
       <input
         className="searchBar"
@@ -61,18 +60,17 @@ function CharacterSearchBar({ marvelCharacters, setMarvelCharacters }) {
         }}
         ref={input}
       ></input>
-      {suggestions &&
-        suggestions.map((suggestion, i) => {
-          return (
-            <div
-              classname="suggestion"
-              key={i}
-              onClick={() => onSuggestHandler(suggestion.name)}
-            >
-              {suggestion.name}
-            </div>
-          );
-        })}
+      {suggestions.slice(0, 4).map((suggestion, i) => {
+        return (
+          <div
+            classname="suggestion"
+            key={i}
+            onClick={() => onSuggestHandler(suggestion.name)}
+          >
+            {suggestion.name}
+          </div>
+        );
+      })}
       <button className="searchBarBtn" onClick={() => handleClick()}>
         <b>Search</b>
       </button>

@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="homeBackground cards">
       <div className="knowMoreCard">
-        <h2>I need to know more</h2>
+        <h2>Research Heros</h2>
         <img
           src="/images/hulk_reading.png"
           alt=""
@@ -15,7 +15,7 @@ function Home() {
         />
       </div>
       <div className="buildTeamCard">
-        <h2>Squad up</h2>
+        <h2>Pick your Hero Squad</h2>
         <img
           onClick={() => navigate("/teams")}
           src="/images/superheroteam.png"

@@ -6,17 +6,19 @@ function NavBar() {
   return (
     <>
       <header>
-        <div>
-          <Link to="/home">Home</Link>
-          <Link to="/characters">Characters</Link>
-          <Link to="/comics">Comics</Link>
-          <Link to="/events">Events</Link>
-          <Link to="/series">Series</Link>
-          <Link to="/teams">Teams</Link>
-        </div>
-        <div className="siteTitle">
-          <b>Marvel Mania</b>
-        </div>
+        <img className="headerImg" src="./images/city.png"></img>
+
+        <Link to="/home">Home</Link>
+        <Link to="/characters">Characters</Link>
+        <Link to="/comics">Comics</Link>
+
+        <b className="siteTitle">
+          <u>Marvel Maniacs</u>
+        </b>
+
+        <Link to="/events">Events</Link>
+        <Link to="/series">Series</Link>
+        <Link to="/teams">Teams</Link>
       </header>
     </>
   );

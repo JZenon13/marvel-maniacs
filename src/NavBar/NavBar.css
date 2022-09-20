@@ -1,28 +1,31 @@
 header {
   width: 100%;
   display: flexbox;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
   border-bottom: 1px solid #ccc;
-  background: #6a0c0b;
-  background: #fbca03;
+  background: black;
 }
-
+.headerImg {
+  width: 100%;
+  height: 200px;
+  margin: auto;
+}
 header a,
 header button {
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.314);
-  border-radius: 10px;
+  background-color: rgba(63, 44, 44, 0.476);
+  width: 13%;
+  border-radius: 15px;
   margin: 1rem;
-  padding: 1rem;
   text-decoration: none;
   cursor: pointer;
-  color: #6a0c0b;
+  color: #bc0505;
 }
 
 .siteTitle {
   font-size: 35px;
   text-align: center;
-  color: #6a0c0b;
+  color: #bc0505;
 }
