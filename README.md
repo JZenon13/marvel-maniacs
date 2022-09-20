@@ -20,13 +20,19 @@ Visit the deployed version of the app at https://marvel-maniacs.herokuapp.com/
 ### `App Features`
 
 ● Search the site for information on ANY Marvel Character including (comics, series, events, stories, etc.)
+
 ● There are links between all sources of information that is easily navigable from their individual character page
+
 ● A user can build their own team from any and every super hero
+
 ● A user can chose to remove any said hero from the team if that hero is deemed unworthy
+
 ● There is a final view of the team verses all comers (aka the world!)
 
 ### `Stretch Goals`
 
 ● an infinite scroll from the exorbitant amount of characters in the universe
+
 ● login capabilities to store data of past teams
-● more CSS/Styling UI
+
+● Additional CSS/Styling UI
