@@ -31,7 +31,7 @@ Visit the deployed version of the app at https://marvel-maniacs.herokuapp.com/
 
 ### `Stretch Goals`
 
-● an infinite scroll from the exorbitant amount of characters in the universe
+● an infinite scroll for the exorbitant amount of characters in the universe
 
 ● login capabilities to store data of past teams
 
