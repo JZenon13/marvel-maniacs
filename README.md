@@ -29,10 +29,4 @@ Visit the deployed version of the app at https://marvel-maniacs.herokuapp.com/
 
 ● There is a final view of the team verses all comers (aka the world!)
 
-### `Stretch Goals`
 
-● an infinite scroll for the exorbitant amount of characters in the universe
-
-● login capabilities to store data of past teams
-
-● Additional CSS/Styling UI
